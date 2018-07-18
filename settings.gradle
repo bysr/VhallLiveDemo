@@ -1,1 +1,1 @@
-include ':app', ':uilibs', ':sdklibrary', ':sdklibs'
+include ':app', ':uilibs', ':sdklibs'
