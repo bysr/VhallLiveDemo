@@ -28,6 +28,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':uilibs')
     implementation "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
+    implementation project(':sdklibs')
 }
 
 repositories {

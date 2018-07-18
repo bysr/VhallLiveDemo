@@ -24,7 +24,7 @@ android {
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
     api "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
     api("io.socket:socket.io-client:${SOCKET_IO_VERSION}") {
@@ -34,6 +34,5 @@ dependencies {
     implementation 'com.github.ctiao:ndkbitmap-armv7a:0.6.4'
     implementation 'com.github.ctiao:ndkbitmap-armv5:0.6.4'
     implementation 'com.github.ctiao:ndkbitmap-x86:0.6.4'
-
-
+    implementation 'com.android.support:design:26.0.2'
 }
