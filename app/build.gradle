@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.vhall.live"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 293
+        versionName "3.3.1"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/beans.xml'
+    }
+
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':uilibs')
+    implementation "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
+}
+
+repositories {
+    flatDir {
+        dirs '../uilibs/libs'
+    }
+}
+repositories {
+    mavenCentral()
+}
