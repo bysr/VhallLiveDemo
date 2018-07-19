@@ -51,6 +51,7 @@
                         android:textSize="15dp" />
 
                     <TextView
+                        android:id="@+id/tvJob"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin"
@@ -60,6 +61,7 @@
                         android:textSize="12dp" />
 
                     <TextView
+                        android:id="@+id/tvTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="今天 12:30"
@@ -69,6 +71,7 @@
 
 
                 <TextView
+                    android:id="@+id/tvSeat"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_gravity="bottom"
@@ -84,6 +87,7 @@
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/tvContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/page_margin"
@@ -93,12 +97,14 @@
             android:textSize="16dp" />
 
         <RelativeLayout
+            android:id="@+id/rlVideoImg"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@color/blueTitle">
 
 
             <RelativeLayout
+                android:id="@+id/rlLive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -106,6 +112,7 @@
                 android:background="@drawable/shape_small_label">
 
                 <TextView
+                    android:id="@+id/tvLive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
@@ -117,11 +124,24 @@
             </RelativeLayout>
 
             <TextView
+                android:id="@+id/tvWatchNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_margin="@dimen/margin"
                 android:text="33003人正在观看"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tvVideoTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/margin"
+                android:layout_marginRight="10dp"
+                android:text="04："
                 android:textColor="#FFFFFFFF"
                 android:textSize="12dp" />
 

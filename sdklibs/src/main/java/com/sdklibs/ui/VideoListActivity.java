@@ -77,6 +77,9 @@ public class VideoListActivity extends BaseActivity {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
 
+
+                adapter.showFoot();
+
                 refreshLayout.finishLoadMore(2000, true, true);
             }
         });
