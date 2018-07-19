@@ -4,14 +4,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/backgroundPage"
     android:orientation="vertical"
     tools:context=".ui.CreateVideoActivity">
+
+    <include layout="@layout/title_view_toolbar"></include>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/page_margin">
+
+        <LinearLayout
+            android:id="@+id/llAddImg"
+            android:layout_width="120dp"
+            android:layout_height="68dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_rect_low"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:background="@mipmap/plus" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin"
+                android:text="封面"
+                android:textColor="#4D000000"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/page_margin"
+            android:layout_toRightOf="@id/llAddImg"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="输入直播标题"
+            android:textColor="#DE000000"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#1A000000" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="115dp"
-        android:layout_marginLeft="@dimen/page_margin"></RelativeLayout>
+        android:background="@color/white"
+        android:padding="@dimen/page_margin">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="输入简介"
+            android:textColor="#DE000000"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A000000"></View>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/page_margin"
+        android:background="#1A000000"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/page_margin">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="方向"
+                android:textColor="#DE000000"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1A000000"></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="方向"
+                android:textColor="#DE000000"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
