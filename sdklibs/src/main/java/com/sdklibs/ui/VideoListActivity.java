@@ -16,6 +16,13 @@ import com.sdklibs.R;
 import com.sdklibs.adapter.VideoAdapter;
 import com.sdklibs.app.BaseActivity;
 import com.sdklibs.bean.VideoBean;
+import com.sdklibs.config.api.RetrofitService;
+import com.sdklibs.net.mode.ApiResult;
+import com.vise.log.ViseLog;
+import com.vise.xsnow.http.ViseHttp;
+import com.vise.xsnow.http.callback.ACallback;
+import com.vise.xsnow.http.core.ApiTransformer;
+import com.vise.xsnow.http.subscriber.ApiCallbackSubscriber;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +47,7 @@ public class VideoListActivity extends BaseActivity {
     }
 
     public void initView() {
+        showTitle("蓝信直播");
         recyclerView = F(R.id.recyclerView);
         refreshLayout = F(R.id.refreshLayout);
         recyclerView.setHasFixedSize(true);
@@ -56,6 +64,29 @@ public class VideoListActivity extends BaseActivity {
 
     private void initData() {
 
+        ViseHttp.RETROFIT()
+                .create(RetrofitService.class)
+                .getVideolist(1, 1, list.size(), 10, 1)
+                .compose(ApiTransformer.<ApiResult>norTransformer())
+                .subscribe(new ApiCallbackSubscriber<>(new ACallback<ApiResult>() {
+                    @Override
+                    public void onSuccess(ApiResult data) {
+                        //json解析数据
+                        ViseLog.d(data.toString());
+
+
+                    }
+
+                    @Override
+                    public void onFail(int errCode, String errMsg) {
+                        ViseLog.d(errMsg);
+
+                    }
+                }));
+    }
+
+    private void iniEvent() {
+        C(fabImg);
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
@@ -83,13 +114,6 @@ public class VideoListActivity extends BaseActivity {
                 refreshLayout.finishLoadMore(2000, true, true);
             }
         });
-
-
-    }
-
-    private void iniEvent() {
-        C(fabImg);
-
 
     }
 

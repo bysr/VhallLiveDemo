@@ -22,16 +22,16 @@ public class VideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private static final int TYPE_ITEM = 0;
     private static final int TYPE_FOOTER = 1;
     //默认不显示底部foot
-    private boolean isfoot = false;
+    private boolean foot = false;
 
 
     public void showFoot() {
-        this.isfoot = true;
+        this.foot = true;
         notifyItemChanged(list.size());
     }
 
     public void HideFoot() {
-        this.isfoot = false;
+        this.foot = false;
     }
 
 
@@ -68,7 +68,7 @@ public class VideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
 
         if (holder instanceof FootViewHolder) {
-            if (isfoot)
+            if (foot)
                 ((FootViewHolder) holder).itemView.setVisibility(View.VISIBLE);
             else ((FootViewHolder) holder).itemView.setVisibility(View.GONE);
         }
