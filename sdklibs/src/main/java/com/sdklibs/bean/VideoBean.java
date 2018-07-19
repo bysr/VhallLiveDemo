@@ -3,7 +3,7 @@ package com.sdklibs.bean;
 /**
  * 直播列表基类
  */
-public class LiveBean extends iEnity {
+public class VideoBean extends iEnity {
 
     private String id;
     private String time;
