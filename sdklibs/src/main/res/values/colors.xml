@@ -7,6 +7,7 @@
 
     <color name="blueTitle">#457ede</color>
     <color name="white">#fff</color>
+    <color name="black">#000000</color>
     <color name="backgroundPage">#F1F2F5</color>
     <color name="alertdialog_line">#c6c6c6</color>
     <color name="actionsheet_blue">#037BFF</color>

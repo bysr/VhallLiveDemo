@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.sdklibs.R;
+
 /**
  * Author: liuqiang
  * Time: 2018-01-02 13:28
