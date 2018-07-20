@@ -42,6 +42,7 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_centerVertical="true"
@@ -68,6 +69,7 @@
 
 
         <EditText
+            android:id="@+id/tv_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
@@ -108,6 +110,44 @@
                 android:text="方向"
                 android:textColor="#DE000000"
                 android:textSize="16dp" />
+
+
+            <RadioGroup
+                android:id="@+id/rg_screen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_landscape"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/rb_left"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="横屏"
+                    android:textColor="@drawable/color_rb_left"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/rb_portrait"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="@dimen/page_margin"
+                    android:background="@drawable/rb_right"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="竖屏"
+                    android:textColor="@drawable/color_rb_right"
+                    android:textSize="14dp" />
+
+            </RadioGroup>
+
+
         </RelativeLayout>
 
         <View
@@ -123,13 +163,92 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="方向"
+                android:text="摄像头"
                 android:textColor="#DE000000"
                 android:textSize="16dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_front"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/rb_left"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="前置"
+                    android:textColor="@drawable/color_rb_left"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/rb_rear"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="@dimen/page_margin"
+                    android:background="@drawable/rb_right"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="后置"
+                    android:textColor="@drawable/color_rb_right"
+                    android:textSize="14dp" />
+
+            </RadioGroup>
+
         </RelativeLayout>
 
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/re_start"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginLeft="@dimen/page_margin"
+        android:layout_marginRight="@dimen/page_margin"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_btn_label">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="开始"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/page_margin"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开始则默认同意"
+            android:textColor="#7A000000"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tv_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《蓝信直播管理条例》"
+            android:textColor="#FF250000"
+            android:textSize="12dp" />
+
+    </LinearLayout>
 
 </LinearLayout>

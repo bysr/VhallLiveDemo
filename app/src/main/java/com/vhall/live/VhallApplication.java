@@ -1,8 +1,9 @@
 package com.vhall.live;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.sdklibs.app.MyApplication;
 import com.vhall.business.VhallSDK;
 import com.vhall.uilibs.Param;
 import com.vhall.vhalllive.pushlive.CameraFilterView;
@@ -10,7 +11,7 @@ import com.vhall.vhalllive.pushlive.CameraFilterView;
 /**
  * 主Application类
  */
-public class VhallApplication extends Application {
+public class VhallApplication extends MyApplication {
 
 
     public static Param param;

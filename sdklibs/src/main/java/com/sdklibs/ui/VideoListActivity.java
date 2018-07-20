@@ -1,5 +1,6 @@
 package com.sdklibs.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
@@ -125,6 +126,9 @@ public class VideoListActivity extends BaseActivity {
     @Override
     protected void processClick(View view) {
 
+
+        Intent intent = new Intent(this, CreateVideoActivity.class);
+        startActivity(intent);
 
     }
 }
