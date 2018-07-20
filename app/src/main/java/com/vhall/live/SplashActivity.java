@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-import com.sdklibs.ui.VideoListActivity;
 import com.vhall.business.VhallSDK;
 
 /**
@@ -25,7 +24,7 @@ public class SplashActivity extends Activity {
                 if (VhallSDK.isLogin()) {
                     intent = new Intent(SplashActivity.this, MainActivity.class);
                 } else {
-                    intent = new Intent(SplashActivity.this, VideoListActivity.class);
+                    intent = new Intent(SplashActivity.this, LoginActivity.class);
                 }
                 startActivity(intent);
                 finish();
