@@ -9,29 +9,15 @@
         android:layout_height="match_parent" />
 
     <Button
-        android:visibility="gone"
         android:id="@+id/btn_publish"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="@dimen/fab_margin"
-        android:background="@mipmap/talk_h" />
-
-       <Button
-
-        android:id="@+id/btn_talk"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="@dimen/fab_margin"
-        android:background="@mipmap/talk_h" />
+        android:layout_margin="5dp"
+        android:background="@drawable/icon_start_bro" />
 
     <LinearLayout
-        android:visibility="gone"
         android:id="@+id/ll_fuc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,54 +86,5 @@
             android:background="@drawable/img_round_audio_open" />
 
     </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:paddingLeft="@dimen/page_margin"
-        android:paddingRight="@dimen/page_margin"
-        android:layout_height="50dp">
-<TextView
-    android:id="@+id/tv_time"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="00:20"
-android:textColor="#FFFFFFFF"
-android:textSize="14dp"
-    android:layout_centerVertical="true"
-/>
-
-
-        <TextView
-            android:id="@+id/tv_watchN"
-            android:layout_toRightOf="@id/tv_time"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-android:text="观看人数: 3284373"
-android:textColor="#FFFFFFFF"
-                android:layout_centerVertical="true"
-android:textSize="12dp"
-/>
-
-        <ImageView
-android:layout_width="6dp"
-android:layout_height="10dp"
-            android:layout_toRightOf="@id/tv_watchN"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
-android:src="@mipmap/rb"
-/>
-
-
-        <ImageView
-android:layout_width="22dp"
-android:layout_height="22dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-android:src="@mipmap/error"
-/>
-
-    </RelativeLayout>
-
 
 </RelativeLayout>

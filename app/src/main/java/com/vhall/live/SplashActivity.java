@@ -25,7 +25,7 @@ public class SplashActivity extends Activity {
                 if (VhallSDK.isLogin()) {
                     intent = new Intent(SplashActivity.this, MainActivity.class);
                 } else {
-                    intent = new Intent(SplashActivity.this, VideoListActivity.class);
+                    intent = new Intent(SplashActivity.this, LoginActivity.class);
                 }
                 startActivity(intent);
                 finish();
