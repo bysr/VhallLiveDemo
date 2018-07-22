@@ -3,8 +3,9 @@ package com.vhall.live;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.sdklibs.app.MyApplication;
+
 import com.vhall.business.VhallSDK;
+import com.vhall.sdklib.app.MyApplication;
 import com.vhall.uilibs.Param;
 import com.vhall.vhalllive.pushlive.CameraFilterView;
 
