@@ -2,55 +2,79 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="6dp">
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/iv_chat_avatar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center_vertical"
-        android:src="@drawable/icon_vhall" />
 
     <RelativeLayout
-        android:id="@+id/ll_item_chat"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+
+        android:layout_marginTop="10dp"
+        android:paddingLeft="@dimen/page_margin"
+        android:paddingRight="@dimen/page_margin">
+
+        <ImageView
+            android:id="@+id/iv_chat_avatar"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:src="@color/blueTitle" />
+
+        <LinearLayout
+            android:id="@+id/ll_item_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_toRightOf="@+id/iv_chat_avatar"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_chat_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:text="李明"
+                android:textColor="#FF4E74BB"
+                android:textSize="14dp" />
+
+
+            <TextView
+                android:id="@+id/tv_chat_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="与蓝天集团总裁的沟通内容是什么？"
+                android:textColor="#DE000000"
+                android:textSize="16dp" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:id="@+id/tv_chat_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_alignParentLeft="true"
-            android:singleLine="true"
-            android:textColor="@color/background_floating_material_dark"
-            android:padding="2dp"
-            android:textSize="14dp" />
+        android:paddingRight="10dp"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/tv_chat_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/tv_chat_name"
-            android:gravity="right"
             android:layout_alignParentRight="true"
-            android:text="00:00"
+            android:gravity="right"
+            android:padding="2dp"
             android:singleLine="true"
-            android:padding="2dp"
-            android:textSize="14dp"/>
+            android:text="00:00"
+            android:textSize="14dp" />
 
-        <TextView
-            android:layout_below="@id/tv_chat_name"
-            android:id="@+id/tv_chat_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="2dp"
-            android:text=""
-            android:textSize="@dimen/common_content_size_16" />
 
     </RelativeLayout>
 

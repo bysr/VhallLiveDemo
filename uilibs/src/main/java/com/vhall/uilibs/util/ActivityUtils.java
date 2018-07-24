@@ -16,4 +16,19 @@ public class ActivityUtils {
         transaction.commit();
     }
 
+
+    public static void hideFragment(FragmentManager fragmentManager,
+                                    Fragment fragment) {
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.hide(fragment);
+        transaction.commit();
+    }
+
+    public static void showFragment(FragmentManager fragmentManager,
+                                    Fragment fragment) {
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.show(fragment);
+        transaction.commit();
+    }
+
 }

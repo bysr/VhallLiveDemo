@@ -432,4 +432,9 @@ public class WatchPlaybackPresenter implements WatchContract.PlaybackPresenter, 
     public void showSurvey(String surveyid) {
 
     }
+
+    @Override
+    public void hideChatView() {
+
+    }
 }

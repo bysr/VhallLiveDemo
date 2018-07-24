@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +18,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.vhall.business.ChatServer;
+import com.vhall.sdklib.widget.EmptyView;
 import com.vhall.uilibs.R;
 import com.vhall.uilibs.util.VhallUtil;
 import com.vhall.uilibs.util.emoji.EmojiUtils;
@@ -47,7 +47,7 @@ public class ChatFragment extends Fragment implements ChatContract.ChatView {
     QuestionAdapter questionAdapter = new QuestionAdapter();
     boolean isquestion = false;
     int status = -1;
-
+    private EmptyView mEmptyView;
     TextView text_chat_content;
     TextView test_send_custom;
     private Activity mActivity;
@@ -87,6 +87,7 @@ public class ChatFragment extends Fragment implements ChatContract.ChatView {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         lv_chat = (ListView) getView().findViewById(R.id.lv_chat);
+        mEmptyView = getView().findViewById(R.id.empty_view);
         test_send_custom = (TextView) getView().findViewById(R.id.test_send_custom);
         test_send_custom.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,10 +116,30 @@ public class ChatFragment extends Fragment implements ChatContract.ChatView {
         } else {
             lv_chat.setAdapter(chatAdapter);
         }
-        init();
+        lv_chat.setEmptyView(mEmptyView);
+        getView().findViewById(R.id.tv_dismiss).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.hideChatView();
+            }
+        });
+//        init();
     }
 
     private void init() {
+        ChatServer.ChatInfo.ChatData Data = new ChatServer.ChatInfo.ChatData();
+        Data.text = "内容";
+
+        for (int i = 0; i < 10; i++) {
+
+            ChatServer.ChatInfo info = new ChatServer.ChatInfo();
+            info.user_name = "小米";
+            info.msgData = Data;
+            info.event = ChatServer.eventMsgKey;
+            chatData.add(info);
+        }
+        chatAdapter.notifyDataSetChanged();
+
     }
 
     @Override
@@ -174,6 +195,7 @@ public class ChatFragment extends Fragment implements ChatContract.ChatView {
                 break;
         }
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

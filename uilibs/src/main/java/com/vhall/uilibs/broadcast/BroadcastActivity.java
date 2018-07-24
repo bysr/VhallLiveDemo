@@ -18,7 +18,6 @@ import com.vhall.uilibs.util.emoji.InputView;
 import com.vhall.uilibs.util.emoji.KeyBoardManager;
 
 
-
 /**
  * 发直播界面的Activity
  */
@@ -41,6 +40,7 @@ public class BroadcastActivity extends FragmentActivity implements BroadcastCont
         }
         setContentView(R.layout.broadcast_activity);
 
+        /*输入框逻辑*/
         inputView = new InputView(this, KeyBoardManager.getKeyboardHeight(this), KeyBoardManager.getKeyboardHeightLandspace(this));
         inputView.add2Window(this);
         inputView.setClickCallback(new InputView.ClickCallback() {
@@ -80,12 +80,10 @@ public class BroadcastActivity extends FragmentActivity implements BroadcastCont
                     chatFragment, R.id.chatFrame);
         }
 
+        ActivityUtils.hideFragment(getSupportFragmentManager(), chatFragment);
         new BroadcastPresenter(param, this, mainFragment, chatFragment);
 
     }
-
-
-
 
 
     @Override
@@ -93,6 +91,24 @@ public class BroadcastActivity extends FragmentActivity implements BroadcastCont
         if (contentLengthLimit > 0)
             inputView.setLimitNo(contentLengthLimit);
         inputView.show(isShowEmoji, user);
+    }
+
+    @Override
+    public void showTalkView() {
+        if (chatFragment.isHidden()) {
+            ActivityUtils.showFragment(getSupportFragmentManager(),
+                    chatFragment);
+        } else {
+            ActivityUtils.hideFragment(getSupportFragmentManager(),
+                    chatFragment);
+        }
+
+    }
+
+    @Override
+    public void hideChatView() {
+        ActivityUtils.hideFragment(getSupportFragmentManager(),
+                chatFragment);
     }
 
     @Override

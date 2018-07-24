@@ -1,5 +1,7 @@
 package com.vhall.uilibs.broadcast;
 
+import android.app.Activity;
+
 import com.vhall.uilibs.BasePresenter;
 import com.vhall.uilibs.BaseView;
 import com.vhall.uilibs.util.emoji.InputUser;
@@ -12,6 +14,10 @@ public class BroadcastContract {
 
     interface BraodcastView extends BaseView<Presenter> {
         void showChatView(boolean emoji, InputUser user, int limit);
+
+        void showTalkView();
+
+        void hideChatView();
     }
 
     interface View extends BaseView<Presenter> {
@@ -33,6 +39,7 @@ public class BroadcastContract {
         void showMsg(String msg);
 
         void setSpeedText(String text);
+
     }
 
     interface Presenter extends BasePresenter {
@@ -48,6 +55,8 @@ public class BroadcastContract {
 
         void changeFlash();
 
+        void showTalkList();
+
         void changeCamera();
 
         void changeAudio();
@@ -55,5 +64,7 @@ public class BroadcastContract {
         void destoryBroadcast();
 
         void setVolumeAmplificateSize(float size);
+
+        void showDialog(Activity context);
     }
 }

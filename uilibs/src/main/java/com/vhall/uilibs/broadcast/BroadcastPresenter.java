@@ -1,13 +1,16 @@
 package com.vhall.uilibs.broadcast;
 
+import android.app.Activity;
 import android.hardware.Camera;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 
 import com.vhall.business.Broadcast;
 import com.vhall.business.ChatServer;
 import com.vhall.business.VhallSDK;
 import com.vhall.business.data.RequestCallback;
+import com.vhall.sdklib.widget.AlertDialog;
 import com.vhall.uilibs.Param;
 import com.vhall.uilibs.chat.ChatContract;
 import com.vhall.uilibs.util.emoji.InputUser;
@@ -48,7 +51,7 @@ public class BroadcastPresenter implements BroadcastContract.Presenter, ChatCont
 
     @Override
     public void onstartBtnClick() {
-         if (isPublishing) {
+        if (isPublishing) {
             finishBroadcast();
         } else {
             if (getBroadcast().isAvaliable() && !isFinish) {
@@ -107,6 +110,12 @@ public class BroadcastPresenter implements BroadcastContract.Presenter, ChatCont
     }
 
     @Override
+    public void showTalkList() {
+        mBraodcastView.showTalkView();
+
+    }
+
+    @Override
     public void changeCamera() {
         int cameraId = getBroadcast().changeCamera();
         Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
@@ -133,6 +142,24 @@ public class BroadcastPresenter implements BroadcastContract.Presenter, ChatCont
     @Override
     public void setVolumeAmplificateSize(float size) {
         getBroadcast().setVolumeAmplificateSize(size);
+    }
+
+    @Override
+    public void showDialog(final Activity context) {
+        new AlertDialog(context).builder().setTitle("结束直播")
+                .setMsg("确定要结束直播吗?")
+                .setPositiveButton("确认", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.finish();
+
+                    }
+                }).setNegativeButton("取消", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        }).show();
     }
 
     private Broadcast getBroadcast() {
@@ -218,6 +245,11 @@ public class BroadcastPresenter implements BroadcastContract.Presenter, ChatCont
     @Override
     public void showSurvey(String surveyid) {
 
+    }
+
+    @Override
+    public void hideChatView() {
+        mBraodcastView.hideChatView();
     }
 
 

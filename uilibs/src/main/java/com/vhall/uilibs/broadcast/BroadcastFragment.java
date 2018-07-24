@@ -1,9 +1,6 @@
 package com.vhall.uilibs.broadcast;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -13,22 +10,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vhall.gpuimage.GPUImageRenderer;
-import com.vhall.gpuimage.gpuimagefilter.GPUImageAlphaBlendFilter;
 import com.vhall.gpuimage.gpuimagefilter.GPUImageFilter;
 import com.vhall.gpuimage.gpuimagefilter.VhallBeautyFilter;
-import com.vhall.vhalllive.pushlive.CameraFilterView;
 import com.vhall.uilibs.R;
+import com.vhall.vhalllive.pushlive.CameraFilterView;
 
 /**
  * 发直播的Fragment
  */
-public class    BroadcastFragment extends Fragment implements BroadcastContract.View, View.OnClickListener {
+public class BroadcastFragment extends Fragment implements BroadcastContract.View, View.OnClickListener {
 
     private BroadcastContract.Presenter mPresenter;
     private CameraFilterView cameraview;
@@ -38,6 +33,7 @@ public class    BroadcastFragment extends Fragment implements BroadcastContract.
 
     private Activity mActivity;
     private PopupWindow mPopupWindow;
+    private Button btn_talk;
 
 
     @Override
@@ -77,6 +73,7 @@ public class    BroadcastFragment extends Fragment implements BroadcastContract.
         mChangeFilter = (Button) getView().findViewById(R.id.btn_changeFilter);
         mChangeFilter.setOnClickListener(this);
         mBackBtn = (Button) getView().findViewById(R.id.btn_back);
+        getView().findViewById(R.id.btn_finish).setOnClickListener(this);
         mBackBtn.setOnClickListener(this);
         cameraview.setAutoCloseFilterCallback(new GPUImageRenderer.AutoCloseFilterListener() {
             @Override
@@ -110,6 +107,11 @@ public class    BroadcastFragment extends Fragment implements BroadcastContract.
 
             }
         });
+
+        btn_talk = getView().findViewById(R.id.btn_talk);
+
+        btn_talk.setOnClickListener(this);
+
     }
 
     @Override
@@ -130,7 +132,13 @@ public class    BroadcastFragment extends Fragment implements BroadcastContract.
             showPopupWindow();
         } else if (i == R.id.btn_back) {
             getActivity().finish();
-        } else {
+        } else if (i == R.id.btn_talk) {
+            //显示评论界面
+            mPresenter.showTalkList();
+
+        } else if (i == R.id.btn_finish) {
+            mPresenter.showDialog(getActivity());
+
         }
     }
 
@@ -266,5 +274,5 @@ public class    BroadcastFragment extends Fragment implements BroadcastContract.
         mPopupWindow.showAsDropDown(mChangeFilter, -18, 0);
     }
 
-    
+
 }

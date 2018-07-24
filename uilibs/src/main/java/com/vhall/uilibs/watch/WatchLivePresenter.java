@@ -183,6 +183,11 @@ public class WatchLivePresenter implements WatchContract.LivePresenter, ChatCont
         });
     }
 
+    @Override
+    public void hideChatView() {
+
+    }
+
     boolean force = false;
 
     @Override

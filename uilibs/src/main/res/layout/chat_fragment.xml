@@ -1,49 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_comment_label"
+        android:paddingLeft="@dimen/page_margin"
+        android:paddingRight="@dimen/page_margin">
+
+        <TextView
+            android:id="@+id/tv_dismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="收起"
+            android:textColor="#FF4E74BB"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tvTalkNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="评论 248"
+            android:textColor="#DE000000"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#1A000000"></View>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/lv_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:transcriptMode="alwaysScroll"></ListView>
+
+        <include
+            android:id="@+id/empty_view"
+            layout="@layout/empty_view" />
+
+    </RelativeLayout>
+
 
     <LinearLayout
         android:id="@+id/chat_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/red_gray"
+        android:layout_height="50dp"
+        android:background="#F7F8F8"
         android:gravity="center_vertical"
         android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_emoji"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="@dimen/page_margin"
+            android:layout_marginRight="@dimen/page_margin"
+            android:src="@mipmap/emoji" />
 
         <TextView
             android:id="@+id/text_chat_content"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="34dp"
             android:layout_centerVertical="true"
-            android:layout_margin="@dimen/common_margin_size_5"
+            android:layout_weight="1"
             android:background="@drawable/bg_common_rounded_white_border_gray"
-            android:padding="10dp"
-            android:text="我来说两句"
+            android:gravity="center_vertical"
+            android:hint="发表下评论吧"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:textColor="@color/gray_heavy"
-            android:textSize="15dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/test_send_custom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/common_margin_size_10"
             android:layout_marginRight="@dimen/common_margin_size_5"
-            android:textColor="@color/white"
             android:background="@drawable/bg_common_rounded_red"
+            android:padding="@dimen/common_margin_size_10"
+            android:text="自定义消息"
+            android:textColor="@color/white"
             android:textSize="15dp"
-            android:text="自定义消息"/>
+            android:visibility="gone" />
 
+        <TextView
+            android:id="@+id/tv_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/page_margin"
+            android:paddingRight="@dimen/page_margin"
+            android:text="发送"
+            android:textColor="#4D000000"
+            android:textSize="14dp" />
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/lv_chat"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/chat_view"
-        android:transcriptMode="alwaysScroll"></ListView>
 
-</RelativeLayout>
+</LinearLayout>
